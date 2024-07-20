@@ -18,19 +18,19 @@ body {
 
 h1 {
     text-align: center;
-    font-size: 12rem;
+    font-size: 8rem;
     line-height: 1;
     margin-bottom: 0;
 }
 
 .score, .total-points, .farm-points, .farm-score, .invite-link {
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .total-points {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 40px;
+    right: 10px;
     background: rgba(255, 255, 255, 0.2);
     padding: 1rem 2rem;
     border-radius: 1rem;
@@ -44,8 +44,9 @@ h1 {
 }
 
 .game {
-    width: 600px;
-    height: 400px;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
@@ -56,6 +57,7 @@ h1 {
     flex: 1 0 33.33%;
     overflow: hidden;
     position: relative;
+    height: 100px; /* Adjust the height to make it responsive */
 }
 
 .hole:after {
@@ -120,14 +122,14 @@ h1 {
 }
 
 button.start-button, button.farm-button {
-    padding: 20px 40px;
-    font-size: 2.5rem;
+    padding: 15px 30px;
+    font-size: 2rem;
     background: linear-gradient(45deg, #ff0066, #ffcc00);
     border: none;
     border-radius: 10px;
     cursor: pointer;
     color: white;
-    position: absolute;
+    position: relative;
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
@@ -146,4 +148,20 @@ button.start-button:active, button.farm-button:active {
 button:disabled {
     background: #aaa;
     cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 6rem;
+    }
+    .score, .total-points, .farm-points, .farm-score, .invite-link {
+        font-size: 1.5rem;
+    }
+    .hole {
+        height: 80px; /* Adjust the height for smaller screens */
+    }
+    button.start-button, button.farm-button {
+        padding: 10px 20px;
+        font-size: 1.5rem;
+    }
 }
