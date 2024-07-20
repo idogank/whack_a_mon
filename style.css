@@ -57,8 +57,8 @@ h1 {
 
 .hole {
     position: relative;
-    height: 100px; /* Adjust the height to make it responsive */
-    overflow: hidden;
+    height: 150px; /* Adjust the height to make it responsive */
+    overflow: hidden; /* Ensure content does not overflow */
 }
 
 .hole:after {
@@ -75,19 +75,18 @@ h1 {
 
 .mole {
     background: url('mole.svg') bottom center no-repeat;
-    background-size: 50%; /* Make the mole smaller */
+    background-size: 60%; /* Make the mole smaller */
     position: absolute;
-    bottom: -100%; /* Hide the mole completely */
+    bottom: -150%; /* Hide the mole completely */
     width: 100%;
     height: 100%;
-    transition: transform 0.4s, visibility 0s 0.4s; /* Delay visibility change to match transition */
-    transform: translateY(100%);
+    transition: bottom 0.4s; /* Animate the bottom property */
+    visibility: hidden; /* Hide the mole initially */
 }
 
 .hole.up .mole {
-    transform: translateY(0); /* Show the mole when it pops up */
-    visibility: visible;
-    transition: transform 0.4s; /* Immediate visibility change */
+    bottom: 0; /* Show the mole when it pops up */
+    visibility: visible; /* Make the mole visible */
 }
 
 .tabs {
@@ -162,14 +161,15 @@ button:disabled {
         font-size: 1.5rem;
     }
     .hole {
-        height: 80px; /* Adjust the height for smaller screens */
+        height: 120px; /* Adjust the height for smaller screens */
     }
     .hole:after {
         height: 40px; /* Adjust the dirt height for smaller screens */
         bottom: 0;
     }
     .mole {
-        background-size: 40%; /* Adjust the mole size for smaller screens */
+        background-size: 50%; /* Adjust the mole size for smaller screens */
+        bottom: -120%; /* Adjust for smaller screens */
     }
     button.start-button, button.farm-button {
         padding: 10px 20px;
