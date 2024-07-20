@@ -96,7 +96,7 @@ function openTab(tabName) {
 // Start farming points over 4 hours, updating every second
 function startFarm() {
     document.querySelector('.farm-button').disabled = true;
-    const fourHoursInSeconds = 5;
+    const fourHoursInSeconds = 10;
     totalFarmPoints = randomTime(100, 200);
     const pointsPerSecond = totalFarmPoints / fourHoursInSeconds;
 
