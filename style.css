@@ -29,7 +29,7 @@ h1 {
 
 .total-points {
     position: absolute;
-    top: 40px;
+    top: 50px;
     right: 10px;
     background: rgba(255, 255, 255, 0.2);
     padding: 1rem 2rem;
@@ -73,17 +73,19 @@ h1 {
 }
 
 .mole {
-    background: url('evo.jpg') bottom center no-repeat;
+    background: url('mole.svg') bottom center no-repeat;
     background-size: 50%; /* Make the mole smaller */
     position: absolute;
     bottom: -100%; /* Hide the mole completely */
     width: 100%;
     height: 100%;
     transition: all 0.4s;
+    visibility: hidden; /* Hide the mole initially */
 }
 
 .hole.up .mole {
     bottom: 0; /* Show the mole when it pops up */
+    visibility: visible; /* Make the mole visible */
 }
 
 .tabs {
