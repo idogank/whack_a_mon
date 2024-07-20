@@ -74,10 +74,10 @@ h1 {
 }
 
 .mole {
-    background: url('mole.svg') bottom center no-repeat;
+    background: url('evo.jpg') bottom center no-repeat;
     background-size: 60%; /* Make the mole smaller */
     position: absolute;
-    bottom: -150%; /* Hide the mole completely */
+    bottom: -100%; /* Hide the mole completely */
     width: 100%;
     height: 100%;
     transition: bottom 0.4s; /* Animate the bottom property */
