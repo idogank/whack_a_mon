@@ -29,8 +29,8 @@ h1 {
 
 .total-points {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 40px;
+    right: 10px;
     background: rgba(255, 255, 255, 0.2);
     padding: 1rem 2rem;
     border-radius: 1rem;
@@ -57,7 +57,7 @@ h1 {
 
 .hole {
     position: relative;
-    height: 80px; /* Adjust the height to make it responsive */
+    height: 100px; /* Adjust the height to make it responsive */
 }
 
 .hole:after {
@@ -76,16 +76,14 @@ h1 {
     background: url('evo.jpg') bottom center no-repeat;
     background-size: 50%; /* Make the mole smaller */
     position: absolute;
-    top: 100%;
+    bottom: -100%; /* Hide the mole completely */
     width: 100%;
     height: 100%;
     transition: all 0.4s;
-    visibility: hidden; /* Hide the mole initially */
 }
 
 .hole.up .mole {
-    top: 0;
-    visibility: visible; /* Show the mole when it pops up */
+    bottom: 0; /* Show the mole when it pops up */
 }
 
 .tabs {
@@ -160,7 +158,7 @@ button:disabled {
         font-size: 1.5rem;
     }
     .hole {
-        height: 60px; /* Adjust the height for smaller screens */
+        height: 80px; /* Adjust the height for smaller screens */
     }
     .hole:after {
         height: 40px; /* Adjust the dirt height for smaller screens */
