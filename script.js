@@ -79,6 +79,27 @@ function bonk(e) {
     score++;
     this.classList.remove("up");
     scoreBoard.textContent = score;
+
+    // Play sound
+    const audio = new Audio('success-catch.wav');
+    audio.play();
+
+    // Vibration
+    try {
+        navigator.vibrate(200); // Vibrate for 200 milliseconds
+    } catch (err) {
+        console.error("Vibration API error:", err);
+    }
+
+    // Hammer animation
+    const hole = this.parentElement;
+    const hammer = hole.querySelector('.hammer');
+    hammer.style.visibility = 'visible';
+    hammer.style.top = '50%';
+    setTimeout(() => {
+        hammer.style.visibility = 'hidden';
+        hammer.style.top = '-100px';
+    }, 200); // Duration of the hammer animation
 }
 
 // Add event listeners to moles for the bonk action
@@ -93,10 +114,10 @@ function openTab(tabName) {
     document.getElementById(tabName).classList.add('active');
 }
 
-// Start farming points over 4 hours, updating every second
+// Start farming points over X seconds, updating every second
 function startFarm() {
     document.querySelector('.farm-button').disabled = true;
-    const fourHoursInSeconds = 5;
+    const fourHoursInSeconds = 5; // X seconds
     totalFarmPoints = randomTime(100, 200);
     const pointsPerSecond = totalFarmPoints / fourHoursInSeconds;
 
